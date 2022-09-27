@@ -43,9 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\CharacterCount.cs" />
-    <Compile Include="Classes\LineCount.cs" />
-    <Compile Include="Classes\Words.cs" />
+    <Compile Include="Business Logic\CharacterCount.cs" />
+    <Compile Include="Business Logic\CountData.cs" />
+    <Compile Include="Business Logic\ICountData.cs" />
+    <Compile Include="Business Logic\LineCount.cs" />
+    <Compile Include="Business Logic\WordCount.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
