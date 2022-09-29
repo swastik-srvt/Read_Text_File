@@ -10,6 +10,7 @@ namespace Read_Text_File.Business_Logic
     internal class CountData
 
     {
+        // follow proper naming conventions, dont use '_' between variable names
         private readonly ICountData _count_Charcter_data;
         private readonly ICountData _count_Word_data;
         private readonly ICountData _count_Line_data;
@@ -24,7 +25,8 @@ namespace Read_Text_File.Business_Logic
             
         }
 
-
+        // your class methods should never print anything on screen, they should return thier result to callee
+        //follow propoer naming conventios for method name
         public void countLines()
         {
             Console.WriteLine("No. of Lines by Query :- " + _count_Line_data.Get_Count_By_Query(_each_file_line) );

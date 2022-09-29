@@ -16,6 +16,7 @@ namespace Read_Text_File
         {
             try
             {
+                //variable name should be meaningful
                 var _each_fil_line = File.ReadAllLines(path).ToList();
                 var countData = new CountData(_each_fil_line);
                 countData.countCharacters();
