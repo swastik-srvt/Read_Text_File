@@ -8,7 +8,7 @@ namespace Read_Text_File.Business_Logic
 {
     internal interface ICountData
     {
-        int Get_Count_By_Query(List<string> each_file_line);
-        int Get_Count_By_Lamda(List<string> each_file_line );
+        int GetCountByQuery(List<string> eachFileLine);
+        int GetCountByLamda(List<string> eachFileLine);
     }
 }
