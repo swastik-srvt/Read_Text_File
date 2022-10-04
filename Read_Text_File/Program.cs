@@ -19,9 +19,16 @@ namespace Read_Text_File
                 //variable name should be meaningful
                 var eachFileLine = File.ReadAllLines(path).ToList();
                 var countData = new CountData(eachFileLine);
-                countData.countCharacters();
-                countData.countWords();
-                countData.countLines();
+                
+                
+                 Console.WriteLine("Count Lines By Query method are :-" + countData.countLinesByQuery);
+                 Console.WriteLine("Count Lines By Lamda method are :-" + countData.countLinesByLamda);
+                 Console.WriteLine();
+                 Console.WriteLine("Count Words By Query method are :-" + countData.countWordsByQuery);
+                 Console.WriteLine("Count Words By Lamda method are :-" + countData.countWordsByLamda);
+                 Console.WriteLine();
+                 Console.WriteLine("Count Characters By Query method are :-" + countData.countCharactersByQuery);
+                 Console.WriteLine("Count Characters By Lamda method are :-" + countData.countCharactersByLamda);
 
             }
             catch(Exception ex)
