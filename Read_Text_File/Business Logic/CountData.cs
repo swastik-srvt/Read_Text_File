@@ -11,17 +11,17 @@ namespace Read_Text_File.Business_Logic
 
     {
         // follow proper naming conventions, dont use '_' between variable names
-        private readonly ICountData _count_Charcter_data;
-        private readonly ICountData _count_Word_data;
-        private readonly ICountData _count_Line_data;
-        private readonly List<string> _each_file_line;
+        private readonly ICountData countCharcterData;
+        private readonly ICountData countWordData;
+        private readonly ICountData countLineData;
+        private readonly List<string> eachFileLine;
 
-        public CountData(List<string> _each_file_line)
+        public CountData(List<string> eachFileLine)
         { 
-            this._each_file_line = _each_file_line;
-            this._count_Charcter_data = new CharacterCount();
-            this._count_Line_data = new LineCount();
-            this._count_Word_data = new WordCount();
+            this.eachFileLine = eachFileLine;
+            this.countCharcterData = new CharacterCount();
+            this.countLineData = new LineCount();
+            this.countWordData = new WordCount();
             
         }
 
@@ -29,20 +29,20 @@ namespace Read_Text_File.Business_Logic
         //follow propoer naming conventios for method name
         public void countLines()
         {
-            Console.WriteLine("No. of Lines by Query :- " + _count_Line_data.Get_Count_By_Query(_each_file_line) );
-            Console.WriteLine("No. of Lines by Lamda :- " + _count_Line_data.Get_Count_By_Lamda(_each_file_line) );
+            Console.WriteLine("No. of Lines by Query :- " + countLineData.GetCountByQuery(eachFileLine) );
+            Console.WriteLine("No. of Lines by Lamda :- " + countLineData.GetCountByLamda(eachFileLine) );
         }
 
         public void countWords()
         {
-            Console.WriteLine("No. of Words by Query :- " + _count_Word_data.Get_Count_By_Query(_each_file_line));
-            Console.WriteLine("No. of Words by Lamda :- " +_count_Word_data.Get_Count_By_Lamda(_each_file_line) );
+            Console.WriteLine("No. of Words by Query :- " + countWordData.GetCountByQuery(eachFileLine));
+            Console.WriteLine("No. of Words by Lamda :- " +countWordData.GetCountByLamda(eachFileLine) );
         }
 
         public void countCharacters()
         {
-            Console.WriteLine("No. of Character by Query :- " + _count_Charcter_data.Get_Count_By_Query(_each_file_line) );
-            Console.WriteLine("No. of Character by Lamda :- " + _count_Charcter_data.Get_Count_By_Lamda(_each_file_line));
+            Console.WriteLine("No. of Character by Query :- " + countCharcterData.GetCountByQuery(eachFileLine) );
+            Console.WriteLine("No. of Character by Lamda :- " + countCharcterData.GetCountByLamda(eachFileLine));
         }
 
     }
