@@ -17,18 +17,18 @@ namespace Read_Text_File
             try
             {
                 //variable name should be meaningful
-                var eachFileLine = File.ReadAllLines(path).ToList();
-                var countData = new CountData(eachFileLine);
+                var fileLines = File.ReadAllLines(path).ToList();
+                var countData = new CountData(fileLines);
                 
                 
-                 Console.WriteLine("Count Lines By Query method are :-" + countData.countLinesByQuery);
-                 Console.WriteLine("Count Lines By Lamda method are :-" + countData.countLinesByLamda);
+                 Console.WriteLine("Count Lines By Query method are :-" + countData.CountLinesByQuery());
+                 Console.WriteLine("Count Lines By Lamda method are :-" + countData.CountLinesByLamda());
                  Console.WriteLine();
-                 Console.WriteLine("Count Words By Query method are :-" + countData.countWordsByQuery);
-                 Console.WriteLine("Count Words By Lamda method are :-" + countData.countWordsByLamda);
+                 Console.WriteLine("Count Words By Query method are :-" + countData.CountWordsByQuery());
+                 Console.WriteLine("Count Words By Lamda method are :-" + countData.CountWordsByLamda());
                  Console.WriteLine();
-                 Console.WriteLine("Count Characters By Query method are :-" + countData.countCharactersByQuery);
-                 Console.WriteLine("Count Characters By Lamda method are :-" + countData.countCharactersByLamda);
+                 Console.WriteLine("Count Characters By Query method are :-" + countData.CountCharactersByQuery());
+                 Console.WriteLine("Count Characters By Lamda method are :-" + countData.CountCharactersByLamda());
 
             }
             catch(Exception ex)

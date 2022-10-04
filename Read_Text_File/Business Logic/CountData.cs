@@ -11,17 +11,18 @@ namespace Read_Text_File.Business_Logic
 
     {
         // follow proper naming conventions, dont use '_' between variable names
-        private readonly ICountData countCharcterData;
-        private readonly ICountData countWordData;
-        private readonly ICountData countLineData;
-        private readonly List<string> eachFileLine;
+        //private variable should have '_' prefix
+        private readonly ICountData _countCharcterData;
+        private readonly ICountData _countWordData;
+        private readonly ICountData _countLineData;
+        private readonly List<string> _fileLines;
 
-        public CountData(List<string> eachFileLine)
+        public CountData(List<string> fileLines)
         { 
-            this.eachFileLine = eachFileLine;
-            this.countCharcterData = new CharacterCount();
-            this.countLineData = new LineCount();
-            this.countWordData = new WordCount();
+            _fileLines = fileLines;
+            _countCharcterData = new CharacterCount();
+            _countLineData = new LineCount();
+            _countWordData = new WordCount();
             
         }
 
@@ -32,11 +33,13 @@ namespace Read_Text_File.Business_Logic
 //             Console.WriteLine("No. of Lines by Query :- " + countLineData.GetCountByQuery(eachFileLine) );
 //             Console.WriteLine("No. of Lines by Lamda :- " + countLineData.GetCountByLamda(eachFileLine) );
 //         }
-        public int countLinesByQuery(){
-            return countLineData.GetCountByQuery(eachFileLine);
+
+        //method name should begin with capital letter
+        public int CountLinesByQuery(){
+            return _countLineData.GetCountByQuery(_fileLines);
         }
-        public int countLinesByLamda(){
-               return countLineData.GetCountByLamda(eachFileLine);
+        public int CountLinesByLamda(){
+               return _countLineData.GetCountByLamda(_fileLines);
         }
 
 //         public void countWords()
@@ -44,11 +47,11 @@ namespace Read_Text_File.Business_Logic
 //             Console.WriteLine("No. of Words by Query :- " + countWordData.GetCountByQuery(eachFileLine));
 //             Console.WriteLine("No. of Words by Lamda :- " +countWordData.GetCountByLamda(eachFileLine) );
 //         }
-         public int countWordsByQuery(){
-            return countWordData.GetCountByQuery(eachFileLine);
+         public int CountWordsByQuery(){
+            return _countWordData.GetCountByQuery(_fileLines);
         }
-        public int countWordsByLamda(){
-               return countWordData.GetCountByLamda(eachFileLine);
+        public int CountWordsByLamda(){
+               return _countWordData.GetCountByLamda(_fileLines);
         }
 
 //         public void countCharacters()
@@ -57,11 +60,11 @@ namespace Read_Text_File.Business_Logic
 //             Console.WriteLine("No. of Character by Lamda :- " + countCharcterData.GetCountByLamda(eachFileLine));
 //         }
         
-         public int countCharactersByQuery(){
-            return countLineData.GetCountByQuery(eachFileLine);
+         public int CountCharactersByQuery(){
+            return _countLineData.GetCountByQuery(_fileLines);
         }
-        public int countCharactersByLamda(){
-               return countLineData.GetCountByLamda(eachFileLine);
+        public int CountCharactersByLamda(){
+               return _countLineData.GetCountByLamda(_fileLines);
         }
 
     }
