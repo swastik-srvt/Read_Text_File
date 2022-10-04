@@ -27,22 +27,41 @@ namespace Read_Text_File.Business_Logic
 
         // your class methods should never print anything on screen, they should return thier result to callee
         //follow propoer naming conventios for method name
-        public void countLines()
-        {
-            Console.WriteLine("No. of Lines by Query :- " + countLineData.GetCountByQuery(eachFileLine) );
-            Console.WriteLine("No. of Lines by Lamda :- " + countLineData.GetCountByLamda(eachFileLine) );
+//         public void countLines()
+//         {
+//             Console.WriteLine("No. of Lines by Query :- " + countLineData.GetCountByQuery(eachFileLine) );
+//             Console.WriteLine("No. of Lines by Lamda :- " + countLineData.GetCountByLamda(eachFileLine) );
+//         }
+        public int countLinesByQuery(){
+            return countLineData.GetCountByQuery(eachFileLine);
+        }
+        public int countLinesByLamda(){
+               return countLineData.GetCountByLamda(eachFileLine);
         }
 
-        public void countWords()
-        {
-            Console.WriteLine("No. of Words by Query :- " + countWordData.GetCountByQuery(eachFileLine));
-            Console.WriteLine("No. of Words by Lamda :- " +countWordData.GetCountByLamda(eachFileLine) );
+//         public void countWords()
+//         {
+//             Console.WriteLine("No. of Words by Query :- " + countWordData.GetCountByQuery(eachFileLine));
+//             Console.WriteLine("No. of Words by Lamda :- " +countWordData.GetCountByLamda(eachFileLine) );
+//         }
+         public int countWordsByQuery(){
+            return countWordData.GetCountByQuery(eachFileLine);
+        }
+        public int countWordsByLamda(){
+               return countWordData.GetCountByLamda(eachFileLine);
         }
 
-        public void countCharacters()
-        {
-            Console.WriteLine("No. of Character by Query :- " + countCharcterData.GetCountByQuery(eachFileLine) );
-            Console.WriteLine("No. of Character by Lamda :- " + countCharcterData.GetCountByLamda(eachFileLine));
+//         public void countCharacters()
+//         {
+//             Console.WriteLine("No. of Character by Query :- " + countCharcterData.GetCountByQuery(eachFileLine) );
+//             Console.WriteLine("No. of Character by Lamda :- " + countCharcterData.GetCountByLamda(eachFileLine));
+//         }
+        
+         public int countCharactersByQuery(){
+            return countLineData.GetCountByQuery(eachFileLine);
+        }
+        public int countCharactersByLamda(){
+               return countLineData.GetCountByLamda(eachFileLine);
         }
 
     }
