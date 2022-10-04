@@ -9,17 +9,17 @@ namespace Read_Text_File.Classes
 {
     internal class WordCount : ICountData
     {
-        public int Get_Count_By_Query(List<string> each_file_line)
+        public int GetCountByQuery(List<string> eachFileLine)
         {
-            return (from line in each_file_line
+            return (from line in eachFileLine
                     from word in line.Split(' ')
                     select word).Count();
         }
 
-        public int Get_Count_By_Lamda(List<string> each_file_Line)
+        public int GetCountByLamda(List<string> eachFileLine)
         {
 
-            return  each_file_Line.SelectMany(word=> word.Split(' ')).Count();
+            return  eachFileLine.SelectMany(word=> word.Split(' ')).Count();
             
 
         }
