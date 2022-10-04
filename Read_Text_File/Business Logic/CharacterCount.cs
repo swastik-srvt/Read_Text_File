@@ -11,18 +11,18 @@ namespace Read_Text_File.Classes
 {
     internal  class CharacterCount : ICountData
     {
-        public int Get_Count_By_Query(List<string> each_file_line)
+        public int GetCountByQuery(List<string> eachFileLine)
         {
-            return (from line in each_file_line
+            return (from line in eachFileLine
                     from word in line.Split(' ')
                     from ch in word
                     where ch != ' '
                     select ch).Count();
         }
-        public int Get_Count_By_Lamda(List<string> each_file_line)
+        public int GetCountByLamda(List<string> eachFileLine)
         {
 
-            return  each_file_line.SelectMany(character => character.Split(' ')).ToList().SelectMany(x => x).Count();
+            return eachFileLine.SelectMany(character => character.Split(' ')).ToList().SelectMany(x => x).Count();
             
 
         }
